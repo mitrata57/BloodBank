@@ -17,7 +17,7 @@ class CustomUser(AbstractUser):
         ('admin','Admin')
 
     ]
-    role = models.CharField(max_lenth = 20 , choices = CHOILCES)
+    role = models.CharField(max_length = 20 , choices = CHOILCES)
     phone_number = models.CharField(max_length=15,)
     address = models.TextField()
     def __str__(self):
@@ -26,13 +26,13 @@ class CustomUser(AbstractUser):
 
 
 class Donor(models.Model):
-    user = models.OneToOneFiled(CustomUser , on_delete = models.CASCADE)
+    user = models.OneToOneField(CustomUser , on_delete = models.CASCADE)
     blood_group =models.CharField(max_length=3 , choices=BLOOD_GROUPS)
     medical_document = models.FileField(upload_to="donors/documents")
 
 
 class Receipient(models.Model):
-    user = models.OneToOneFiled(CustomUser , on_delete = models.CASCADE)
+    user = models.OneToOneField(CustomUser , on_delete = models.CASCADE)
     blood_group =models.CharField(max_length=3 , choices=BLOOD_GROUPS)
     medical_document = models.FileField(upload_to="receipient/documents")
     
