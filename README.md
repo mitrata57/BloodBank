@@ -20,4 +20,3 @@ Currently, the project has basic **user management** functionality. Other featur
 
 ---
 
-## Project Structure
