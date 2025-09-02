@@ -22,7 +22,7 @@ class CustomUser(AbstractUser):
     address = models.TextField()
     def __str__(self):
         return f"{self.username}[{self.role}]"
-    #yo baaki chha AUTH_USER_MODEL = "users.CustomUser"
+   
 
 
 class Donor(models.Model):
